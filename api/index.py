@@ -1,3 +1,8 @@
+import sys
+import os
+# Add the current directory to sys.path to allow absolute imports from project root on Vercel
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from curl_cffi.requests import errors as curl_errors
