@@ -26,7 +26,8 @@ function App() {
     if (cached) return cached;
 
     // Fetch from backend
-    const res = await fetch(`http://localhost:8000/api/fetch/${platform}/${username}`);
+    // Uses relative path to support both local Vite proxy and Vercel production deployment
+    const res = await fetch(`/api/fetch/${platform}/${username}`);
     if (!res.ok) {
       const data = await res.json();
       throw new Error(data.detail?.message || 'Failed to fetch user data');
