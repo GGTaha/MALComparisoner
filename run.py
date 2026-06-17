@@ -5,17 +5,17 @@ import time
 
 def run():
     print("==========================================")
-    print("Starting Taste Blend (Backend + Frontend)")
+    print("Starting Watch Overlap (Backend + Frontend)")
     print("==========================================")
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    backend_dir = os.path.join(base_dir, "backend")
-    frontend_dir = os.path.join(base_dir, "frontend")
+    backend_dir = os.path.join(base_dir, "api")
+    frontend_dir = base_dir
 
     # Start backend
     print(f"Starting Backend in {backend_dir}...")
     backend_proc = subprocess.Popen(
-        [sys.executable, "-m", "uvicorn", "main:app", "--reload", "--port", "8000"],
+        [sys.executable, "-m", "uvicorn", "index:app", "--reload", "--port", "8000"],
         cwd=backend_dir
     )
 

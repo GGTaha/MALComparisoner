@@ -7,7 +7,7 @@ from core.config import settings
 from core.registry import get_adapter
 import re
 
-app = FastAPI(title="Taste Blend API")
+app = FastAPI(title="Watch Overlap API")
 
 app.add_middleware(
     CORSMiddleware,
